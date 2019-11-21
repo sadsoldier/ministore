@@ -1,6 +1,8 @@
 
 Rails.application.configure do
 
+    config.active_storage.service = :local
+
     config.exceptions_app = self.routes
 
     config.consider_all_requests_local = false

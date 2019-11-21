@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 
     def index
         if session[:user_id]
-            redirect_to record_index_path
+            redirect_to document_index_path
         else
             set_locale
             redirect_to login_path

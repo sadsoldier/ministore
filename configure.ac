@@ -1,8 +1,8 @@
-AC_INIT(rap2,0.01)
+AC_INIT(ministore,0.01)
 AM_INIT_AUTOMAKE
 AC_PREFIX_DEFAULT(/usr/local)
 
-PACKAGE=rap2
+PACKAGE=ministore
 
 AC_CHECK_PROG(HAVE_NODE, node, true, false, /bin /usr/local/bin /usr/bin)
 if test "x$HAVE_NODE" = "xfalse"; then
@@ -371,7 +371,7 @@ AC_SUBST(app_daemonize, "$APP_DAEMONIZE")
 
 AC_OUTPUT([
 Makefile
-rap2
+ministore
 app/config/puma.rb
 app/config/application.rb
 ])

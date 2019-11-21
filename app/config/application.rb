@@ -6,6 +6,7 @@ require "rails"
 require "active_model/railtie"
 require "active_job/railtie"
 require "active_record/railtie"
+require "active_storage/engine"
 require "action_controller/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
@@ -19,7 +20,7 @@ module Rapp5
     config.i18n.available_locales = [:en, :ru]
     config.i18n.default_locale = :en
 
-    file_name = "/home/ziggi/rapp4bw/app/config/config.yml"
+    file_name = "/home/ziggi/ministore/app/config/config.yml"
 
     if File.file?(file_name)
         configx = YAML.load(ERB.new(File.read(file_name)).result)
@@ -33,7 +34,7 @@ module Rapp5
     config.assets.js_compressor = :uglifier
     config.assets.gzip = true
 
-    config.paths['config/database'] = ["/home/ziggi/rapp4bw/app/config/database.yml"]
+    config.paths['config/database'] = ["/home/ziggi/ministore/app/config/database.yml"]
 
     class CustomFormatter < ActiveSupport::Logger::SimpleFormatter
         def call(severity, time, progname, msg)
@@ -42,14 +43,14 @@ module Rapp5
         end
     end
 
-    logger = ActiveSupport::Logger.new("/home/ziggi/rapp4bw/app/log/#{Rails.env}.log")
+    logger = ActiveSupport::Logger.new("/home/ziggi/ministore/app/log/#{Rails.env}.log")
     logger.formatter = CustomFormatter.new
     config.logger = ActiveSupport::TaggedLogging.new(logger)
 
     config.assets.cache_limit = 50.megabytes
     config.assets.configure do |env|
         env.cache = Sprockets::Cache::FileStore.new(
-            File.join('/home/ziggi/rapp4bw/app/tmp/cache/assets'),
+            File.join('/home/ziggi/ministore/app/tmp/cache/assets'),
             config.assets.cache_limit,
             env.logger
         )

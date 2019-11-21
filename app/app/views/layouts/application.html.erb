@@ -12,6 +12,8 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+    <%= javascript_pack_tag 'application' %>
+
 </head>
 
 <body>
@@ -23,7 +25,7 @@
         </div>
 
         <% if current_user %>
-            <%= link_to t('records'), record_index_path, class: "nav-link" %>
+            <%= link_to 'Documents', document_index_path, class: "nav-link" %>
             <% if current_user.is_admin %>
                 <%= link_to t('users'), user_index_path, class: "nav-link" %>
             <% end %>
@@ -55,8 +57,6 @@
             </div>
         </div>
     </div>
-
-    <%= javascript_pack_tag 'application' %>
 
 </body>
 

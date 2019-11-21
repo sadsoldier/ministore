@@ -98,7 +98,8 @@ DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure \
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
-CONFIG_CLEAN_FILES = rap2 app/config/puma.rb app/config/application.rb
+CONFIG_CLEAN_FILES = ministore app/config/puma.rb \
+	app/config/application.rb
 CONFIG_CLEAN_VPATH_FILES =
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
@@ -151,7 +152,7 @@ am__can_run_installinfo = \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
-am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/rap2.in \
+am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/ministore.in \
 	$(top_srcdir)/app/config/application.rb.in \
 	$(top_srcdir)/app/config/puma.rb.in config.guess config.sub \
 	install-sh missing
@@ -283,7 +284,7 @@ top_srcdir = @top_srcdir@
 yarn = @yarn@
 AUTOMAKE_OPTIONS = foreign no-dependencies no-installinfo
 APPDIR = app
-bin_SCRIPTS = rap2
+bin_SCRIPTS = ministore
 EXTRA_DIST = app
 all: all-am
 
@@ -321,7 +322,7 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 $(am__aclocal_m4_deps):
-rap2: $(top_builddir)/config.status $(srcdir)/rap2.in
+ministore: $(top_builddir)/config.status $(srcdir)/ministore.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 app/config/puma.rb: $(top_builddir)/config.status $(top_srcdir)/app/config/puma.rb.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@

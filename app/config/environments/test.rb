@@ -14,4 +14,5 @@ Rails.application.configure do
 
   config.action_controller.allow_forgery_protection = false
   config.active_support.deprecation = :stderr
+
 end

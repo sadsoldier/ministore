@@ -17,7 +17,7 @@ build:
 	cd app && RAILS_ENV=production bundle exec rake assets:precompile
 
 
-bin_SCRIPTS = rap2
+bin_SCRIPTS = ministore
 
 EXTRA_DIST = app
 

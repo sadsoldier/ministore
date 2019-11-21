@@ -1,5 +1,6 @@
 
-import 'bootstrap'
+//import 'bootstrap'
+import 'bootstrap/dist/js/bootstrap'
 
 //import 'bootstrap/js/dist/util'
 //import 'bootstrap/js/dist/alert'
@@ -12,10 +13,10 @@ import 'bootstrap'
 //import 'bootstrap/js/dist/tab'
 //import 'bootstrap/js/dist/tooltip'
 //import 'bootstrap/js/dist/popover'
+import './custom'
+
 
 import '../stylesheets/application'
-
-import './custom'
 
 
 //import '@fortawesome/fontawesome-free/js/all'
@@ -25,7 +26,10 @@ import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
 
 
-
 require('@rails/ujs').start()
 require('turbolinks').start()
 //require('@rails/activestorage').start()
+
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
